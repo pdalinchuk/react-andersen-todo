@@ -1,0 +1,26 @@
+.btn-tab {
+  flex-grow: 1;
+  font-size: 1.3rem;
+  padding: 1rem 0;
+  background-color: rgba(201, 179, 201, 0.5);
+  border: 2px solid rgb(62, 35, 88);
+}
+
+.btn-tab:first-child {
+  border-radius: 1rem 0 0 1rem;
+  border-right: none;
+}
+
+.btn-tab:nth-child(2) {
+  border-left: none;
+  border-right: none;
+}
+
+.btn-tab:last-child {
+  border-radius: 0 1rem 1rem 0;
+  border-left: none;
+}
+
+.btn-selected {
+  background-color: rgba(112, 43, 112, 0.73);
+}
