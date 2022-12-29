@@ -1,0 +1,22 @@
+h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: rgb(62, 38, 88);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tasks-list {
+  background-color: rgba(201, 179, 201, 0.5);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 15px;
+}
+
+.tabs-container {
+  margin: 1rem auto;
+  text-align: center;
+  display: flex;
+  width: 70%;
+}

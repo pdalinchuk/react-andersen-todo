@@ -1,0 +1,74 @@
+.task-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 2px solid rgb(62, 35, 88);
+  border-radius: 1rem;
+}
+
+.edit-task-input {
+  border: 2px solid rgba(62, 35, 88, 0.5);
+  color: rgb(62, 35, 88);
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding-left: 5px;
+  width: 50%;
+}
+
+.task {
+  flex-grow: 3;
+  color: rgb(45, 20, 71);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.task.completed {
+  text-decoration: line-through;
+}
+
+.checkbox {
+  margin-left: 1rem;
+  margin-right: 2rem;
+  transform: scale(2);
+}
+
+.btn {
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  border-radius: 1rem;
+}
+
+.btn-delete {
+  border: 1px solid #c53030;
+  background-color: #f56565;
+}
+
+.btn-delete:hover {
+  background-color: #c53030;
+}
+
+.btn-edit {
+  border: 1px solid #c05621;
+  background-color: #ed8936;
+}
+
+.btn-edit:hover {
+  background-color: #c05621;
+}
+
+.btn-update {
+  padding-left: 2.75rem;
+  padding-right: 2.75rem;
+  border: 1px solid #2f855a;
+  background-color: #48bb78;
+}
+
+.btn-update:hover {
+  background-color: #2f855a;
+}
