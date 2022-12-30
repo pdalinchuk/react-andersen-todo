@@ -15,9 +15,8 @@ const Tab: FC<ITabProps> = ({ text, id, handleClick, isSelected }) => {
     <button
       className={`btn-tab ${isSelected && 'btn-selected'}`}
       onClick={() => handleClick(id)}
-    >
-      {text}
-    </button>
+      children={text}
+    />
   );
 };
 

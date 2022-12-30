@@ -16,12 +16,10 @@ interface IToDoItemProps {
 const ToDoItem: FC<IToDoItemProps> = ({ todo, index }) => {
   const dispatch = useDispatch();
   const [editMode, setEditMode] = useState(false);
-  const [id, setId] = useState<number>();
   const [text, setText] = useState('');
 
-  const handleEdit = (id: number, value: string) => {
+  const handleEdit = (value: string) => {
     setEditMode(true);
-    setId(id);
     setText(value);
   };
 
@@ -43,7 +41,7 @@ const ToDoItem: FC<IToDoItemProps> = ({ todo, index }) => {
       />
       <button
         className='btn btn-update'
-        onClick={() => handleUpdateToDo(id!, text)}
+        onClick={() => handleUpdateToDo(todo.id, text)}
       >
         OK
       </button>
@@ -67,10 +65,7 @@ const ToDoItem: FC<IToDoItemProps> = ({ todo, index }) => {
       >
         Удалить
       </button>
-      <button
-        className='btn btn-edit'
-        onClick={() => handleEdit(todo.id, todo.value)}
-      >
+      <button className='btn btn-edit' onClick={() => handleEdit(todo.value)}>
         Изменить
       </button>
     </div>
