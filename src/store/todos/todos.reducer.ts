@@ -5,9 +5,18 @@ import {
   TOGGLE_TO_DO,
 } from './todos.types';
 
-const initialState = [];
+export interface IToDo {
+  id: number;
+  value: string;
+  isActive: boolean;
+}
 
-export const todosReducer = (state = initialState, action) => {
+const initialState: IToDo[] = [];
+
+export const todosReducer = (
+  state: IToDo[] = initialState,
+  action: Record<string, any>
+) => {
   switch (action.type) {
     case ADD_TO_DO:
       return [
@@ -20,15 +29,17 @@ export const todosReducer = (state = initialState, action) => {
       ];
     case EDIT_TO_DO:
       const { id, value } = action.payload;
-      return state.map((todo) => (todo.id !== id ? todo : { ...todo, value }));
+      return state.map((todo: IToDo) =>
+        todo.id !== id ? todo : { ...todo, value }
+      );
     case TOGGLE_TO_DO:
-      return state.map((todo) =>
+      return state.map((todo: IToDo) =>
         todo.id !== action.payload
           ? todo
           : { ...todo, isActive: !todo.isActive }
       );
     case DELETE_TO_DO:
-      return state.filter((todo) => todo.id !== action.payload);
+      return state.filter((todo: IToDo) => todo.id !== action.payload);
     default:
       return state;
   }

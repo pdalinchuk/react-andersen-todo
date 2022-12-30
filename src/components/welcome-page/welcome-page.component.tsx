@@ -1,18 +1,19 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUserName } from '../../store/user/user.actions';
 import './welcome-page.styles.css';
 
-const WelcomePage = () => {
+const WelcomePage: FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [errorMessage, setErrorMessage] = useState('');
   const [enteredName, setEnteredName] = useState('');
 
-  const handleChange = (event) => setEnteredName(event.target.value);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+    setEnteredName(event.target.value);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     const name = enteredName.trim();
     setEnteredName('');

@@ -1,12 +1,12 @@
-import { userReducer } from '../store/user/user.reducer.js';
-import { todosReducer } from '../store/todos/todos.reducer.js';
-import { setUserName } from '../store/user/user.actions.js';
+import { userReducer } from '../store/user/user.reducer';
+import { todosReducer } from '../store/todos/todos.reducer';
+import { setUserName } from '../store/user/user.actions';
 import {
   addToDo,
   editToDo,
   toggleToDo,
   deleteToDo,
-} from '../store/todos/todos.actions.js';
+} from '../store/todos/todos.actions';
 
 const state = {
   user: { userName: 'Pasha' },
