@@ -7,17 +7,18 @@ const AddToDo = () => {
   const dispatch = useDispatch();
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const taskInput = document.querySelector('.new-task');
-    let task = taskInput.value.trim();
+    const taskInput: HTMLInputElement | null =
+      document.querySelector('.new-task');
+    let task = taskInput?.value.trim();
 
-    if (!task.length) {
+    if (!task?.length) {
       setErrorMessage('Пожалуйста, введите текст задания');
     } else {
       setErrorMessage('');
       dispatch(addToDo(task));
-      taskInput.value = '';
+      if (taskInput) taskInput.value = '';
     }
   };
 
@@ -25,7 +26,7 @@ const AddToDo = () => {
     <>
       <form className='add-todo-form' onSubmit={handleSubmit}>
         <label>Введите новое задание:</label>
-        <input type='text' className='new-task'></input>
+        <input type='text' className='new-task' />
         <button type='submit'>Добавить задание</button>
       </form>
       {errorMessage ? <p className='add-todo-error'>{errorMessage}</p> : null}

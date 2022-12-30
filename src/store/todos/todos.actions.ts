@@ -5,7 +5,7 @@ import {
   TOGGLE_TO_DO,
 } from './todos.types';
 
-export const addToDo = (task) => {
+export const addToDo = (task: string) => {
   return {
     type: ADD_TO_DO,
     payload: {
@@ -16,7 +16,7 @@ export const addToDo = (task) => {
   };
 };
 
-export const editToDo = (id, task) => {
+export const editToDo = (id: number, task: string) => {
   return {
     type: EDIT_TO_DO,
     payload: {
@@ -26,14 +26,14 @@ export const editToDo = (id, task) => {
   };
 };
 
-export const toggleToDo = (id) => {
+export const toggleToDo = (id: number) => {
   return {
     type: TOGGLE_TO_DO,
     payload: id,
   };
 };
 
-export const deleteToDo = (id) => {
+export const deleteToDo = (id: number) => {
   return {
     type: DELETE_TO_DO,
     payload: id,

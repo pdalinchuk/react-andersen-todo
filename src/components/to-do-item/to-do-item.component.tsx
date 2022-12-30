@@ -1,25 +1,31 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {
   deleteToDo,
   editToDo,
   toggleToDo,
 } from '../../store/todos/todos.actions';
+import { IToDo } from '../../store/todos/todos.reducer';
 import './to-do-item.styles.css';
 
-const ToDoItem = ({ todo, index }) => {
+interface IToDoItemProps {
+  todo: IToDo;
+  index: number;
+}
+
+const ToDoItem: FC<IToDoItemProps> = ({ todo, index }) => {
   const dispatch = useDispatch();
   const [editMode, setEditMode] = useState(false);
-  const [id, setId] = useState('');
+  const [id, setId] = useState<number>();
   const [text, setText] = useState('');
 
-  const handleEdit = (id, value) => {
+  const handleEdit = (id: number, value: string) => {
     setEditMode(true);
     setId(id);
     setText(value);
   };
 
-  const handleUpdateToDo = (id, value) => {
+  const handleUpdateToDo = (id: number, value: string) => {
     if (!value) {
       setEditMode(false);
     } else {
@@ -37,7 +43,7 @@ const ToDoItem = ({ todo, index }) => {
       />
       <button
         className='btn btn-update'
-        onClick={() => handleUpdateToDo(id, text)}
+        onClick={() => handleUpdateToDo(id!, text)}
       >
         OK
       </button>
